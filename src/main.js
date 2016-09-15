@@ -1,9 +1,7 @@
-var rev = "GITREF: __REVISION__";
-
 function getGitref() {
     nw = window.open("");
-    nw.document.write(rev);
-    return;
+    nw.document.write("GITREF: __REVISION__");
+    return 0;
 }
 
 function leadingZero(number) {
@@ -25,13 +23,15 @@ function now() {
         + ":" + leadingZero(today.getSeconds());
 }
 
-var header = "<!DOCTYPE html><html><head></head><body>"
-    + "DEICHMANSKE BIBLIOTEK<br>"
-    + "Tlf: 23432900<br>"
-    + "postmottak.deichman@oslo.kommune.no<br>"
-    + "Kvittering på innlevert materiale<br>"
-    + now() + "<br>"
-    + "&nbsp;<br><hr>";
+function getHeader() {
+    return "<!DOCTYPE html><html><head></head><body>"
+        + "DEICHMANSKE BIBLIOTEK<br>"
+        + "Tlf: 23432900<br>"
+        + "postmottak.deichman@oslo.kommune.no<br>"
+        + "Kvittering på innlevert materiale<br>"
+        + now() + "<br>"
+        + "&nbsp;<br><hr>";
+}
 
 function getInner(contents) {
     var retval;
@@ -64,7 +64,7 @@ function getRow(table) {
         }
     }
 
-    var string = header;
+    var string = getHeader();
 
     for (var i = 1, l = data.length; i < l; i++) {
         for (var k = 0, f = data[i].length; k < f; k++) {
