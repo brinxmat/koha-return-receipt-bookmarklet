@@ -55,16 +55,18 @@ function getRow(table) {
             data[r] = rowdata;
         }
     }
+
     var string = header;
+
     for (var i = 1, l = data.length; i < l; i++) {
-
-
         for (var k = 0, f = data[i].length; k < f; k++) {
             string += headers[k] + ":  " + data[i][k] + "<br>";
         }
         string += "<hr>";
     }
+
     string += "&nbsp;<br>&nbsp;<br><body></html>";
+
     return string;
 }
 printWindow = window.open("");
