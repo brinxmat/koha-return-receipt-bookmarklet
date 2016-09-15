@@ -1,4 +1,4 @@
-# koha-return-receipt-bookmarklet
+# Koha Check-in bookmarklet
 A bookmarklet for generating receipts for manually returned items (check ins) in Koha
 
 If you want a receipt for manually returned loans in Koha — and let's face it, who doesn't — you're going to have to make do with a shoddy printout on A4. If you're on a kiosk-based solution like us, this cuts no mustard. Thus, here's a snappy bookmarklet that creates a nicely formatted plain-text representation for printing on receipt printers.
@@ -30,7 +30,7 @@ This produces two files in the build directory: index.html and index.js; the fir
 - Will break at some point and need updating
 - Norwegian text for Deichman everywhere
 
-##Keeping it all clean
-Because bookmarklets are getting rolled out all the time, it's nice to be able to check that the version in use is up to date. In order to do this, just add ```GITREF``` to any URL, hit enter and click the bookmarklet; this will return the git revision number of the version you are using. 
+##Keeping it all clean — when built with node
+Because bookmarklets are getting rolled out all the time, it's nice to be able to check that the version in use is up to date. To do this, just add ```GITREF``` to any URL, hit enter and click the bookmarklet; this will return the git revision number of the version you are using. 
 
-Be aware, however, that you're — of course — looking at the local hash; rather than that of the remote.
+Be aware, however, that you're — of course — looking at the local hash, rather than that of the remote.
