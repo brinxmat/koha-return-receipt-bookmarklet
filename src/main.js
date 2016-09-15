@@ -1,6 +1,6 @@
 var rev = "GITREF: __REVISION__";
 
-if (window.location.href.indexOf("GITREF")) {
+if (window.location.href.toLowerCase().indexOf("gitref") > -1) {
     nw = window.open("");
     nw.document.write(rev);
 }
