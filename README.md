@@ -31,4 +31,6 @@ This produces two files in the build directory: index.html and index.js; the fir
 - Norwegian text for Deichman everywhere
 
 ##Keeping it all clean
-Because bookmarklets are getting rolled out all the time, it's nice to be able to check that the version in use is up to date. In order to do this, just add ```GITREF``` to any URL, hit enter and click the bookmarklet; this will return the git revision number of the version you are using.
+Because bookmarklets are getting rolled out all the time, it's nice to be able to check that the version in use is up to date. In order to do this, just add ```GITREF``` to any URL, hit enter and click the bookmarklet; this will return the git revision number of the version you are using. 
+
+Be aware, however, that you're — of course — looking at the local hash; rather than that of the remote.
