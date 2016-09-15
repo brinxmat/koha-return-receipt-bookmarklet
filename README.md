@@ -1,5 +1,5 @@
 # koha-return-receipt-bookmarklet
-A bookmarklet for generating receipts for manually returned items
+A bookmarklet for generating receipts for manually returned items (check ins) in Koha
 
 If you want a receipt for manually returned loans in Koha — and let's face it, who doesn't — you're going to have to make do with a shoddy printout on A4. If you're on a kiosk-based solution like us, this cuts no mustard. Thus, here's a snappy bookmarklet that creates a nicely formatted plain-text representation for printing on receipt printers.
 
