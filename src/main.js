@@ -1,8 +1,9 @@
 var rev = "GITREF: __REVISION__";
 
-if (window.location.href.toLowerCase().indexOf("gitref") > -1) {
+function getGitref() {
     nw = window.open("");
     nw.document.write(rev);
+    return;
 }
 
 function leadingZero(number) {
@@ -76,7 +77,19 @@ function getRow(table) {
 
     return string;
 }
-printWindow = window.open("");
-printWindow.document.write(getRow(document.getElementById("checkedintable")));
-printWindow.print();
-printWindow.close();
+
+function getCheckIns() {
+    var table = document.getElementById("checkedintable");
+    if (table !== null) {
+        printWindow = window.open("");
+        printWindow.document.write(getRow(table));
+        printWindow.print();
+        printWindow.close();
+    }
+}
+
+if (window.location.href.toLowerCase().indexOf("gitref") > -1) {
+    getGitref();
+} else {
+    getCheckIns();
+}
