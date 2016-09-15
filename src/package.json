@@ -10,7 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "bookmarklet": "^0.0.6",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "node-git-version": "^0.1.2"
   }
 }
 

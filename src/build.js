@@ -2,15 +2,22 @@ const main = "main.js"
 
 const bookmarklet = require('bookmarklet')
 const handlebars = require('handlebars')
+
+const version = require('./version.js')
+
 const fs = require('fs')
 
-const templateData = {
+var revision = null;
+
+var templateData = {
     "title": "Bookmarklet for Koha",
-    "copyText": "Drag and drop this to your bookmarks toolbar: ",
+    "revision": version.hash,
+    "revisionText": "Build: ",
+    "copyText": "Drag and drop this on your bookmarks toolbar: ",
     "bookmarkletName": "Returkvittering"
 }
 
-console.log("========== BUILDING BOOKMARKLET ==========")
+console.log("========== BUILDING BOOKMARKLET (REV: " + version.hash + ") ==========")
 
 fs.readFile(main, 'utf8', function (err, data) {
     if (err) {

@@ -1,3 +1,10 @@
+var rev = "GITREF: __REVISION__";
+
+if (window.location.href.indexOf("GITREF")) {
+    nw = window.open("");
+    nw.document.write(rev);
+}
+
 function leadingZero(number) {
     var retval = number;
     if (number < 10) {
