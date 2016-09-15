@@ -1,16 +1,16 @@
 # koha-return-receipt-bookmarklet
 A bookmarklet for generating receipts for manually returned items
 
-If you want a receipt for manually returned loans in Koha — and let's face it, who doesn't — you're going to have to make do with a shoddy printout on A4. If you're on a kiosk-based solution like us, this cuts no mustard. Thus, here's a snappy bookmarklet that creates a nicely formatted plain-text representation of for printing on receipt printers.
+If you want a receipt for manually returned loans in Koha — and let's face it, who doesn't — you're going to have to make do with a shoddy printout on A4. If you're on a kiosk-based solution like us, this cuts no mustard. Thus, here's a snappy bookmarklet that creates a nicely formatted plain-text representation for printing on receipt printers.
 
 ##What is a bookmarklet?
-A bookmarklets are bookmarks that hide executable javascript snippets that do things in your webbrowser. This should sound a bit worrying. We're using them for good here. Honest.
+A bookmarklets are bookmarks that hide executable javascript snippets that do things in your webbrowser. This should sound a bit worrying; we're using them for good here, honest.
 
 ##Building
 
 You've got two choices:
 
-###Simple, manual:
+###Simple, manual
 - copy code in ```src/main.js```
 - google "simple bookmarklet creator", click a link
 - follow instructions
@@ -28,4 +28,4 @@ This produces two files in the build directory: index.html and index.js; the fir
 
 - Tested with Chrome as this is our kiosk tool
 - Will break at some point and need updating
-- Norwegian text as the bookmarklet title
+- Norwegian text for Deichman everywhere
