@@ -23,10 +23,6 @@ function writeBookmarklet(data) {
 
     const bmkl = bookmarklet.convert(data, {})
 
-    if (bmkl.errors) {
-        throw bmkl.errors
-    }
-
     templateData.javascript = bmkl
 
     const renderer = handlebars.compile(fs.readFileSync("tmpl/template.hjs", 'utf8'))
