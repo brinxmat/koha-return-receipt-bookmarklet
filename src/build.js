@@ -26,6 +26,15 @@ fs.readFile(main, 'utf8', function (err, data) {
     writeBookmarklet(data)
 })
 
+fs.readFile(main, 'utf8', function (err, data) {
+    if (err) {
+        throw err
+    }
+    writeBookmarklet(data)
+})
+
+
+
 function writeBookmarklet(data) {
 
     const bmkl = bookmarklet.convert(data, {})
