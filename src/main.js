@@ -68,7 +68,8 @@ function getRow(table) {
 
     for (var i = 1, l = data.length; i < l; i++) {
         for (var k = 0, f = data[i].length; k < f; k++) {
-            string += headers[k] + ":  " + data[i][k] + "<br>";
+//            string += headers[k] + ":  " + data[i][k] + "<br>";
+            string += getRequiredFields(headers[k], data[i][k]);
         }
         string += "<hr>";
     }
@@ -78,14 +79,30 @@ function getRow(table) {
     return string;
 }
 
-function getCheckIns() {
-    var table = document.getElementById("checkedintable");
-    if (table !== null) {
-        printWindow = window.open("");
-        printWindow.document.write(getRow(table));
-        printWindow.print();
-        printWindow.close();
+function getRequiredFields(header, data) {
+    var ret = "";
+    switch (header) {
+        case "Tittel":
+        case "Strekkode":
+            ret = header + ":  " + data + "<br>";
+            break;
+        default:
+            break;
     }
+    return ret;
+}
+
+function getCheckIns() {
+    var tables = ["checkedintable", "rfiditems"];
+
+    printWindow = window.open("");
+
+    tables.forEach(function (table) {
+        printWindow.document.write(getRow(document.getElementById(table)));
+
+    });
+    printWindow.print();
+    printWindow.close();
 }
 
 if (window.location.href.toLowerCase().indexOf("gitref") > -1) {
