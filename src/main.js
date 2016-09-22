@@ -68,7 +68,6 @@ function getRow(table) {
 
     for (var i = 1, l = data.length; i < l; i++) {
         for (var k = 0, f = data[i].length; k < f; k++) {
-//            string += headers[k] + ":  " + data[i][k] + "<br>";
             string += getRequiredFields(headers[k], data[i][k]);
         }
         string += "<hr>";
@@ -94,13 +93,17 @@ function getRequiredFields(header, data) {
 
 function getCheckIns() {
     var tables = ["checkedintable", "rfiditems"];
-
-    printWindow = window.open("");
+    var returnedItems = "";
 
     tables.forEach(function (table) {
-        printWindow.document.write(getRow(document.getElementById(table)));
-
+        var currentTable = document.getElementById(table);
+        if (currentTable !== null) {
+            returnedItems += getRow(currentTable);
+        }
     });
+
+    printWindow = window.open("");
+    printWindow.document.write(returnedItems);
     printWindow.print();
     printWindow.close();
 }
