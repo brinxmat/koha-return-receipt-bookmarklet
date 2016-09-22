@@ -24,13 +24,37 @@ function now() {
 }
 
 function getHeader() {
-    return "<!DOCTYPE html><html><head></head><body>"
-        + "DEICHMANSKE BIBLIOTEK<br>"
-        + "Tlf: 23432900<br>"
-        + "postmottak.deichman@oslo.kommune.no<br>"
-        + "Kvittering på innlevert materiale<br>"
-        + now() + "<br>"
-        + "&nbsp;<br><hr>";
+    return "<!DOCTYPE html>\n"
+         + "<html>\n"
+         + "  <head>\n"
+         + "    <title>Innleveringskvittering</title>\n"
+         + "    <meta charset=\"utf-8\">\n"
+         + "    <style type=\"text/css\">\n"
+         + "      body {font-family: sans-serif; font-size: 14px; }\n"
+         + "      h1 { font-weight: bold; font-size: 18px; }\n"
+         + "      table { border-collapse: collapse; border-top: 2px solid #000; }\n"
+         + "      td { padding: 5px; vertical-align: top; }\n"
+         + "      tr.barcode-row > td { border-bottom: 2px solid #000; }\n"
+         + "    </style>\n"
+         + "  </head>\n"
+         + "  <body>\n"
+         + "    <p>\n"
+         + "      <h1>DEICHMANSKE BIBLIOTEK</h1>\n"
+         + "      Tlf: 23432900<br>\n"
+         + "      postmottak.deichman@oslo.kommune.no<br>\n"
+         + "      Kvittering på innlevert materiale<br>\n"
+         + "      " + now() + "<br>\n"
+         + "    </p>\n"
+         + "    <table>\n";
+}
+
+function getFooter() {
+    return "    </table>\n"
+         + "    <p>\n"
+         + "      &nbsp;\n"
+         + "    </p>\n"
+         + "  </body>\n"
+         + "</html>\n";
 }
 
 function getInner(contents) {
@@ -70,10 +94,7 @@ function getRow(table) {
         for (var k = 0, f = data[i].length; k < f; k++) {
             string += getRequiredFields(headers[k], data[i][k]);
         }
-        string += "<hr>";
     }
-
-    string += "&nbsp;<br>&nbsp;<br><body></html>";
 
     return string;
 }
@@ -82,8 +103,10 @@ function getRequiredFields(header, data) {
     var ret = "";
     switch (header) {
         case "Tittel":
+            ret = "      <tr class=\"title-row\"><td>" + header + ":</td><td>" + data + "</td></tr>\n";
+            break;
         case "Strekkode":
-            ret = header + ":  " + data + "<br>";
+            ret = "      <tr class=\"barcode-row\"><td>" + header + ":</td><td>" + data + "</td></tr>\n";
             break;
         default:
             break;
@@ -106,6 +129,7 @@ function getCheckIns() {
         printWindow = window.open("");
         printWindow.document.write(getHeader());
         printWindow.document.write(returnedItems);
+        printWindow.document.write(getFooter());
         printWindow.print();
         printWindow.close();
     }
