@@ -64,7 +64,7 @@ function getRow(table) {
         }
     }
 
-    var string = getHeader();
+    var string = "";
 
     for (var i = 1, l = data.length; i < l; i++) {
         for (var k = 0, f = data[i].length; k < f; k++) {
@@ -102,10 +102,13 @@ function getCheckIns() {
         }
     });
 
-    printWindow = window.open("");
-    printWindow.document.write(returnedItems);
-    printWindow.print();
-    printWindow.close();
+    if (returnedItems !== "") {
+        printWindow = window.open("");
+        printWindow.document.write(getHeader());
+        printWindow.document.write(returnedItems);
+        printWindow.print();
+        printWindow.close();
+    }
 }
 
 if (window.location.href.toLowerCase().indexOf("gitref") > -1) {
