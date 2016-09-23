@@ -30,12 +30,12 @@ function getHeader() {
          + "    <title>Innleveringskvittering</title>\n"
          + "    <meta charset=\"utf-8\">\n"
          + "    <style type=\"text/css\">\n"
-         + "      body {font-family: sans-serif; font-size: 14px; }\n"
-         + "      h1 { font-weight: bold; font-size: 18px; }\n"
+         + "      body {font-family: sans-serif; font-size: 1.5em; }\n"
+         + "      h1 { font-weight: bold; font-size: 2em; }\n"
          + "      table { border-collapse: collapse; border-top: 2px solid #000; }\n"
          + "      td { padding: 5px; vertical-align: top; }\n"
          + "      tr.barcode-row > td { border-bottom: 2px solid #000; }\n"
-         + "      h2 { font-weight: bold; font-size: 16px; }\n"
+         + "      h2 { font-weight: bold; font-size: 1.8em; }\n"
          + "    </style>\n"
          + "  </head>\n"
          + "  <body>\n"
@@ -105,7 +105,7 @@ function getRequiredFields(header, data) {
     var ret = "";
     switch (header) {
         case "Tittel":
-            ret = "      <tr class=\"title-row\"><td>" + header + ":</td><td>" + data + "</td></tr>\n";
+            ret = "      <tr class=\"title-row\"><td colspan=\"2\">" + data + "</td></tr>\n";
             break;
         case "Strekkode":
             ret = "      <tr class=\"barcode-row\"><td>" + header + ":</td><td>" + data + "</td></tr>\n";
