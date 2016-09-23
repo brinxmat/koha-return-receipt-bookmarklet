@@ -35,6 +35,7 @@ function getHeader() {
          + "      table { border-collapse: collapse; border-top: 2px solid #000; }\n"
          + "      td { padding: 5px; vertical-align: top; }\n"
          + "      tr.barcode-row > td { border-bottom: 2px solid #000; }\n"
+         + "      h2 { font-weight: bold; font-size: 16px; }\n"
          + "    </style>\n"
          + "  </head>\n"
          + "  <body>\n"
@@ -42,7 +43,8 @@ function getHeader() {
          + "      <h1>DEICHMANSKE BIBLIOTEK</h1>\n"
          + "      Tlf: 23432900<br>\n"
          + "      postmottak.deichman@oslo.kommune.no<br>\n"
-         + "      Kvittering på innlevert materiale<br>\n"
+         + "       &nbsp;<br>\n"
+         + "      <h2>Kvittering på innlevert materiale</h2>\n"
          + "      " + now() + "<br>\n"
          + "    </p>\n"
          + "    <table>\n";
@@ -51,7 +53,7 @@ function getHeader() {
 function getFooter() {
     return "    </table>\n"
          + "    <p>\n"
-         + "      &nbsp;\n"
+         + "      <h2>www.deichman.no</h2>\n"
          + "    </p>\n"
          + "  </body>\n"
          + "</html>\n";
